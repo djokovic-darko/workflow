@@ -1,0 +1,64 @@
+.accordion {
+  margin: rem(15) 0 0;
+
+  &__item {
+
+    button,
+    p {
+      font-family: $font-light;
+      font-size: rem(15);
+      line-height: line-height(15, 20);
+      transition: all 0.5s ease;
+
+      @include media-breakpoint-up(xl) {
+        font-size: rem(18);
+        line-height: line-height(18, 22);
+      }
+    }
+
+    button {
+      position: relative;
+      padding: rem(15) rem(15) rem(15) 0;
+      width: 100%;
+      text-align: left;
+      z-index: 1;
+      background-color: $pampas;
+      border-bottom: rem(1) solid $black;
+
+      @include media-breakpoint-up(xl) {
+        padding: rem(25) rem(15) rem(25) 0;
+      }
+
+      &.active {
+
+        &::after {
+          content: '-';
+        }
+      }
+
+      &::after {
+        content: '+';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        color: $boulder;
+        transition: 150ms all ease-out;
+      }
+    }
+
+    &-info {
+      overflow: hidden;
+      pointer-events: none;
+      max-height: 0;
+      transition: all .5s ease;
+      opacity: 0;
+
+      &.active {
+        margin: rem(15) 0;
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+}

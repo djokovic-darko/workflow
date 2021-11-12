@@ -1,69 +1,54 @@
-// ==========================================================================
-// ## LAYOUT: BASE
-// ==========================================================================
+@charset 'UTF-8';
 
-/// @content
-///   DO NOT ADD CLASSES OR RULES IN THIS FILE DIRECTLY.
-///   Instead, use imports to add extensions or snippets you made along the project.
-///
-///
-/// Production build weights only ~10kb (~2.5kb gzipped)
-///
+//#######################################
+//## VARIABLES ##########################
+//#######################################
+@import "utility/variables/colors";
+@import "utility/variables/fonts";
+@import "utility/variables/transitions";
 
-/// - SETTINGS & TOOLS (MUST BE AT THE TOP)
-/// Common settings and tools.
-//
-@import './settings/colors';
-@import './settings/fonts';
-// @import './settings/breakpoints';
+//#######################################
+//## MIXINS #############################
+//#######################################
+@import "utility/mixins/typography-sizes";
+@import "utility/mixins/breakpoints";
+@import "utility/mixins/hover";
+@import "utility/mixins/overlay";
+@import "utility/mixins/browser";
+@import "utility/mixins/ratio";
+@import "utility/mixins/placeholder";
+@import "utility/mixins/hide-scrollbar";
+@import "utility/mixins/line-height";
 
-@import './tools/functions';
-@import './tools/mixins';
+//#######################################
+//## BASE ###############################
+//#######################################
+@import "base/reset";
+// @import "base/fonts";
+@import "base/html";
+@import "base/typography";
+@import "base/container";
+@import "base/general";
 
-/// - GENERIC
-/// Reset............A level playing field using @necolas’s Normalize.
-/// Print................Reset-like styles for print media.
-/// Elements.............Sensibly and tersely share some global commonalities.
-///
-@import './generic/reset';
-@import './generic/print';
-@import './generic/elements';
+//#######################################
+//## UTILITIES ##########################
+//#######################################
+@import "utility/utility-classes";
+@import "utility/text-content";
 
-/// - COMPONENTS
-// Build and include your project’s UI components.
-// Uncomment and add to this as necessary.
-///
-/// Button..............Specific styles for btn component and its variations.
-/// Typeface............Specific styles for heading component and its size variations.
-///
-@import './components/button';
-@import './components/typeface';
-// @import './components/price';
+//#######################################
+//## LAYOUT #############################
+//#######################################
+@import "layout/loader";
+@import "layout/header";
+@import "layout/footer";
 
-/// - SECTIONS
-// These are base section.
-///
-/// Header..............Shopify static section.
-/// Footer..............Shopify static section.
-///
-@import './sections/header';
-@import './sections/footer';
+//#######################################
+//## COMPONENTS #########################
+//#######################################
+@import "components/btn";
+@import "components/wishlist-modal";
 
-/// - OBJECTS
-// Be aware that enabling offsets produces a large chunk of classes which might
-// bloat your CSS, depending on the amount of breakpoints you defined.
-// Only set this to `true` if you are absolutely sure about what you are doing.
-///
-/// Container............Helper classes for aligning elements inside containers.
-///
-@import './objects/container';
-// @import './objects/grid';
-
-/// - UTILITIES
-/// Space................Nudge bits of the DOM around with these spacing classes.
-/// Display..............Helper utility classes to hide/show content.
-/// Align................Helper classes for aligning elements inside containers.
-///
-@import './utilities/space';
-@import './utilities/display';
-@import './utilities/align';
+//#######################################
+//## PAGES #########################
+//#######################################

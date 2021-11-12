@@ -1,0 +1,61 @@
+.radio-field {
+  position: relative;
+  padding-left: rem(40);
+  height: rem(28);
+  cursor: pointer;
+
+  input[type="radio"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: rem(28);
+    height: rem(28);
+    opacity: 0;
+    appearance: auto;
+
+    &:checked {
+
+      & + .radio-field__circle {
+        background-color: $black;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: rem(8);
+          height: rem(8);
+          border-radius: 50%;
+          background: $white;
+        }
+      }
+    }
+  }
+
+  label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: rem(12);
+    font-family: $headline-font;
+    line-height: line-height(12, 18);
+
+    @include media-breakpoint-up(md){
+      font-size: rem(14);
+      line-height: line-height(14, 25);
+    }
+  }
+
+  &__circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: rem(28);
+    width: rem(28);
+    background-color: $gallery;
+    border-radius: 50%;
+    border: 1px solid $black;
+  }
+}
